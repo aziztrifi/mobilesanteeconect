@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
@@ -12,15 +11,30 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SanteConnectMobile"
         tools:targetApi="31">
+
+        <!-- Activité de réclamation (point d'entrée de l'application) -->
         <activity
-            android:name=".Activity.LoginActivity"
+            android:name=".Activity.ReclamationActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    </application>
 
+        <!-- Activité d'avis -->
+        <activity
+            android:name=".Activity.AvisActivity"
+            android:exported="true" />
+
+        <!-- Activité de connexion -->
+        <activity
+            android:name=".Activity.LoginActivity"
+            android:exported="false" />
+
+        <!-- Activité de suivi des réclamations -->
+        <activity
+            android:name=".Activity.SuiviReclamationActivity"
+            android:exported="true" />
+    </application>
 </manifest>

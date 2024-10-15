@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Suivi de vos réclamations"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Un exemple de réclamation -->
+    <LinearLayout
+        android:id="@+id/reclamation_container_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:background="@drawable/reclamation_background_red"
+        android:layout_marginBottom="8dp">
+
+        <TextView
+            android:id="@+id/tv_reclamation_description_1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Réclamation 1: Non traité"
+            android:textSize="16sp"
+            android:textColor="@android:color/white"/>
+
+        <TextView
+            android:id="@+id/tv_status_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Statut: Non Traité"
+            android:textColor="@android:color/white"/>
+    </LinearLayout>
+
+    <!-- Réclamation 2 : en cours -->
+    <LinearLayout
+        android:id="@+id/reclamation_container_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:background="@drawable/reclamation_background_orange"
+        android:layout_marginBottom="8dp">
+
+        <TextView
+            android:id="@+id/tv_reclamation_description_2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Réclamation 2: En cours de traitement"
+            android:textSize="16sp"
+            android:textColor="@android:color/white"/>
+
+        <TextView
+            android:id="@+id/tv_status_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Statut: En cours"
+            android:textColor="@android:color/white"/>
+    </LinearLayout>
+
+    <!-- Réclamation 3 : traité -->
+    <LinearLayout
+        android:id="@+id/reclamation_container_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:background="@drawable/reclamation_background_green">
+
+        <TextView
+            android:id="@+id/tv_reclamation_description_3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Réclamation 3: Traité"
+            android:textSize="16sp"
+            android:textColor="@android:color/white"/>
+
+        <TextView
+            android:id="@+id/tv_status_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Statut: Traité"
+            android:textColor="@android:color/white"/>
+    </LinearLayout>
+
+    <!-- Bouton pour passer à l'interface de passer une réclamation -->
+    <Button
+        android:id="@+id/btn_passer_reclamation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Passer une Réclamation"
+        android:layout_marginTop="16dp"/>
+</LinearLayout>
