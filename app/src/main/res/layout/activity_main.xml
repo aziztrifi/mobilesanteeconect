@@ -52,7 +52,7 @@
             android:layout_marginEnd="20dp"
             android:fontFamily="@font/rubik_medium"
             android:gravity="center"
-            android:text="Category"
+            android:text=""
             android:textColor="#373131"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -150,7 +150,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView4"
         app:layout_constraintTop_toBottomOf="@+id/imageView4"
-        tools:listitem="@layout/filter_row_item" />
+         />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/product_recycler"
@@ -160,7 +160,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/constraintLayout"
         app:layout_constraintTop_toBottomOf="@+id/cat_recycler"
-        tools:listitem="@layout/products_row_item" />
+       />
 
     <Button
         android:id="@+id/my_card_btn"

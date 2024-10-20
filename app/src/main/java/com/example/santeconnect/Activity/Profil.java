@@ -1,6 +1,11 @@
 package com.example.santeconnect.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,15 +17,34 @@ import com.example.santeconnect.R;
 
 public class Profil extends AppCompatActivity {
 
+    SessionManager sessionManager ;
+    TextView tvUserName,tvUserEmail ;
+    Button btnLogout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_profil);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+
+
+
+        sessionManager= new SessionManager(getApplicationContext());
+         btnLogout = findViewById(R.id.btnLogout);
+        tvUserName=(TextView) findViewById(R.id.tvUserName);
+        tvUserEmail=(TextView) findViewById(R.id.tvUserEmail);
+
+        String name =sessionManager.getSessionDetails("key_session_name");
+        String email =sessionManager.getSessionDetails("key_session_email");
+
+        tvUserName.setText(name);
+        tvUserEmail.setText(email);
+    }
+
+
+    public void logout(View view){
+        sessionManager.logoutSession();
+
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
     }
 }
