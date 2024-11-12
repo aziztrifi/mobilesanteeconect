@@ -17,59 +17,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="208dp"
-            android:layout_marginEnd="12dp"
-            android:fontFamily="@font/rubik_medium"
-            android:gravity="center"
-            android:text="You are in "
-            android:textColor="#3F51B5"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="13dp"
-            android:fontFamily="@font/rubik_bold_italic"
-            android:gravity="center"
-            android:text="Home"
-            android:textColor="#005B1B"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView4" />
-
-        <TextView
-            android:id="@+id/textView12"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="20dp"
-            android:fontFamily="@font/rubik_medium"
-            android:gravity="center"
-            android:text="Category"
-            android:textColor="#373131"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:fontFamily="@font/rubik_medium"
-            android:gravity="center"
-            android:text="Setting"
-            android:textColor="#373131"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
         <ImageView
             android:id="@+id/imageView2"
@@ -80,17 +27,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:srcCompat="@drawable/ic_search" />
-
-        <TextView
-            android:id="@+id/logout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="44dp"
-            android:layout_marginBottom="152dp"
-            android:background="@drawable/logout"
-            app:layout_constraintBottom_toTopOf="@+id/textView4"
-            app:layout_constraintEnd_toEndOf="parent"
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -126,7 +62,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:fontFamily="@font/rubik_medium"
-        android:text="Let's find your favourite care product"
+        android:text="Let's find your favourite care "
         android:textColor="@android:color/background_dark"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="@+id/textView5"
@@ -143,23 +79,12 @@
         app:srcCompat="@drawable/ic_filter" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/cat_recycler"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/product_recycler"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView4"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4"
-        tools:listitem="@layout/filter_row_item" />
-
-    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/product_recycler"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/my_card_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/constraintLayout"
-        app:layout_constraintTop_toBottomOf="@+id/cat_recycler"
         tools:listitem="@layout/products_row_item" />
 
     <Button
@@ -186,10 +111,9 @@
         android:id="@+id/imageView3"
         android:layout_width="59dp"
         android:layout_height="62dp"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="36dp"
-        app:layout_constraintStart_toEndOf="@+id/constraintLayout"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/profile" />
+        app:srcCompat="@drawable/profile"
+        tools:layout_editor_absoluteX="109dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

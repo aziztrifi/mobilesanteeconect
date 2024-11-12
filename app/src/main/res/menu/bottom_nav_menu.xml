@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_trophy"
+        android:icon="@drawable/blog"
+        android:title="Blogs" />
+
+    <item
+        android:id="@+id/nav_profile"
+        android:icon="@drawable/profile"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/nav_play"
+        android:icon="@drawable/ic_search"
+        android:title="Play" />
+
+    <item
+        android:id="@+id/nav_settings"
+        android:icon="@drawable/sante"
+        android:title="Settings" />
+
+    <item
+        android:id="@+id/nav_power"
+        android:icon="@drawable/calendar"
+        android:title="Callendrier" />
+</menu>

@@ -63,10 +63,12 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void onLoginClick(View view) {
-        // Implement the login logic here
-        // Example: Intent to the next screen after login
-        Intent intent = new Intent(LoginActivity.this, MainActivity.class); // Assuming HomeActivity exists
-        startActivity(intent);
+        try {
+            Intent intent = new Intent(LoginActivity.this, BlogActivity.class);
+            startActivity(intent);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 
