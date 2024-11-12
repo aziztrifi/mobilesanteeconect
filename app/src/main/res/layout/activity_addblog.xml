@@ -7,20 +7,35 @@
     tools:context=".Activity.AddBlog">
 
     <!-- Add Post Header -->
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="49dp"
+        android:layout_height="77dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="376dp"
+        android:adjustViewBounds="false"
+        android:onClick="toAdmin_Pael"
+        android:src="@drawable/ic_back_img2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
     <TextView
         android:id="@+id/textView4"
         style="@style/viewParent.headerText.NoMode"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="149dp"
+        android:layout_height="99dp"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="32dp"
         android:text="ADD POST"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/cardView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        android:textSize="24sp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <!-- CardView for Blog Form -->
     <androidx.cardview.widget.CardView
@@ -45,28 +60,29 @@
                 android:id="@+id/blogTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
                 android:hint="Enter Title"
-                android:inputType="text"
-                android:layout_marginBottom="16dp" />
+                android:inputType="text" />
 
             <!-- Blog Description -->
             <EditText
                 android:id="@+id/blogDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
                 android:hint="Enter Description"
                 android:inputType="textMultiLine"
-                android:minLines="3"
-                android:layout_marginBottom="16dp" />
+                android:minLines="3" />
 
             <!-- Blog Date -->
             <EditText
                 android:id="@+id/blogDate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
                 android:hint="Enter Date (e.g., 2024-10-17)"
-                android:inputType="date"
-                android:layout_marginBottom="16dp" />
+                android:inputType="none" />
+
 
             <!-- Add Image Placeholder -->
             <ImageView
@@ -74,18 +90,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
                 android:contentDescription="Add Image"
-                android:src="@drawable/ic_add_image"
                 android:scaleType="centerCrop"
-                android:layout_marginBottom="16dp" />
+                app:srcCompat="@android:drawable/ic_input_add" />
 
-            <!-- Button to Select Image -->
-            <Button
-                android:id="@+id/buttonSelectImage"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Select Image"
-                android:onClick="selectImage" />
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
@@ -93,13 +102,14 @@
     <!-- Submit Button -->
     <Button
         android:id="@+id/submitPostButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Submit Post"
+        android:layout_width="320dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="108dp"
         android:onClick="submitPost"
-        app:layout_constraintTop_toBottomOf="@+id/cardView"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="Submit Post"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="32dp"/>
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
