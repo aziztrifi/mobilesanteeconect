@@ -25,11 +25,18 @@
 <color name="whiteTextColor">#fff</color>
 <color name="primaryTextColor">#084EC2</color>
 
-
-<!--colors for crop activity-->
-<!--<color name="ucrop_color_toolbar">@color/teal_500</color>-->
-<!--<color name="ucrop_color_statusbar">@color/teal_700</color>-->
-<!--<color name="ucrop_color_widget_active">@color/teal_500</color>-->
+    <color name="primaryColor">#FF03DAC5</color>
+    <!-- Darker version of primary color -->
+    <color name="primaryDarkColor">#5CACE2</color>
+    <!-- Secondary color for complementary UI elements -->
+    <color name="secondaryColor">#8FCB9B</color>
+    <!-- Accent color for action buttons or highlights -->
+    <color name="accentColor">#FF03DAC5</color>
+    <!-- Background color for the app -->
+    <color name="backgroundColor">#F9F9F9</color>
+    <!-- Text color for primary content -->
+    <color name="textColorPrimary">#333333</color>
+    <!-- White color for backgrounds or content areas -->
 
 
 

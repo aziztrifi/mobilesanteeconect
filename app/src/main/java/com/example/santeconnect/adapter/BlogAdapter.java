@@ -3,6 +3,8 @@ package com.example.santeconnect.adapter;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,14 +38,15 @@ public class BlogAdapter extends RecyclerView.Adapter<BlogAdapter.BlogViewHolder
     public static class BlogViewHolder extends RecyclerView.ViewHolder {
 
         TextView blogTitle, blogDate, blogDescription;
-        ImageView ii, detailsButton;
+        ImageView blogImageView, deleteButton, detailsButton;
 
         public BlogViewHolder(View itemView) {
             super(itemView);
             blogTitle = itemView.findViewById(R.id.blogTitle);
             blogDate = itemView.findViewById(R.id.blogDate);
             blogDescription = itemView.findViewById(R.id.blogDescription);
-            ii = itemView.findViewById(R.id.deleteButton);
+            blogImageView = itemView.findViewById(R.id.blogImageView);  // ImageView to display the blog image
+            deleteButton = itemView.findViewById(R.id.deleteButton);
             detailsButton = itemView.findViewById(R.id.show);
         }
     }
@@ -64,6 +67,16 @@ public class BlogAdapter extends RecyclerView.Adapter<BlogAdapter.BlogViewHolder
         holder.blogDate.setText(sdf.format(blog.getDate()));
         holder.blogDescription.setText(blog.getDescription());
 
+        // Set the blog image if available
+        if (blog.getImageblog() != null && blog.getImageblog().length > 0) {
+            // Decode the byte array into a Bitmap and set it to the ImageView
+            Bitmap bitmap = BitmapFactory.decodeByteArray(blog.getImageblog(), 0, blog.getImageblog().length);
+            holder.blogImageView.setImageBitmap(bitmap);
+        } else {
+            // If no image is available, set a default image or placeholder
+            holder.blogImageView.setImageResource(R.drawable.ic_search);  // Set a placeholder image
+        }
+
         // Set the click listener for the details button
         holder.detailsButton.setOnClickListener(v -> {
             // Check if the blog ID is valid (greater than 0)
@@ -77,10 +90,8 @@ public class BlogAdapter extends RecyclerView.Adapter<BlogAdapter.BlogViewHolder
             }
         });
 
-
-
         // Handle delete button click
-        holder.ii.setOnClickListener(v -> {
+        holder.deleteButton.setOnClickListener(v -> {
             deleteBlog(blog, position);
         });
     }

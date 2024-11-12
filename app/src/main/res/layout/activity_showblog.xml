@@ -138,14 +138,17 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="342dp"
-                android:layout_height="194dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="184dp"
+                android:id="@+id/blogImageView"
+                android:layout_width="334dp"
+                android:layout_height="155dp"
+                android:contentDescription="Blog Image"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_search"
+                app:layout_constraintBottom_toTopOf="@+id/textView"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/az" />
+                app:layout_constraintTop_toBottomOf="@+id/postblog" /> <!-- Placeholder Image -->
+
 
             <TextView
                 android:id="@+id/textView"
