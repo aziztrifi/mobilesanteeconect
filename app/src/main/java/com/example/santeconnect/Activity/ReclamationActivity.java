@@ -9,9 +9,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.santeconnect.R;
+import com.example.santeconnect.db.Appdatabase;
+import com.example.santeconnect.entities.Reclamation;
 import com.google.android.material.snackbar.Snackbar;
 
 public class ReclamationActivity extends AppCompatActivity {
@@ -24,6 +28,10 @@ public class ReclamationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reclamation);
+
+
+
+
 
         // Initialisation des vues
         etName = findViewById(R.id.et_name);
@@ -97,6 +105,16 @@ public class ReclamationActivity extends AppCompatActivity {
         builder.setPositiveButton("Oui", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+                // Créer un objet Reclamation
+                String type = getSelectedReclamationType();
+                Reclamation newReclamation = new Reclamation(0, name, email, description, type, "Non traité");
+
+                // Insérer la réclamation dans la base de données
+                new Thread(() -> {
+                    Appdatabase db = Appdatabase.getAppDatabase(getApplicationContext());
+                    db.reclamationDAO().createReclamation(newReclamation);
+                }).start();
+
                 // Réinitialiser le formulaire
                 resetForm();
 
@@ -107,7 +125,7 @@ public class ReclamationActivity extends AppCompatActivity {
                 // Démarrer l'activité de suivi des réclamations
                 Intent intent = new Intent(ReclamationActivity.this, SuiviReclamationActivity.class);
                 startActivity(intent);
-                finish(); // Optionnel : ferme l'activité actuelle si tu ne veux pas revenir en arrière
+                finish();
             }
         });
 
@@ -122,6 +140,21 @@ public class ReclamationActivity extends AppCompatActivity {
         AlertDialog dialog = builder.create();
         dialog.show();
     }
+
+    // Méthode pour obtenir le type de réclamation sélectionné
+    private String getSelectedReclamationType() {
+        if (cbDoctor.isChecked()) {
+            return "Docteur";
+        } else if (cbService.isChecked()) {
+            return "Service";
+        } else if (cbAppointment.isChecked()) {
+            return "Rendez-vous";
+        } else if (cbOther.isChecked()) {
+            return etOtherReclamation.getText().toString().trim();
+        }
+        return "";
+    }
+
 
     private void resetForm() {
         // Réinitialiser les champs

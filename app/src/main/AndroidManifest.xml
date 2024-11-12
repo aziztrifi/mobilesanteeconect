@@ -14,7 +14,7 @@
 
         <!-- Activité de réclamation (point d'entrée de l'application) -->
         <activity
-            android:name=".Activity.ReclamationActivity"
+            android:name=".Activity.SuiviReclamationActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,7 +34,13 @@
 
         <!-- Activité de suivi des réclamations -->
         <activity
-            android:name=".Activity.SuiviReclamationActivity"
+            android:name=".Activity.ReclamationActivity"
             android:exported="true" />
+
+        <!-- Activité de modification de réclamation -->
+        <activity
+            android:name=".Activity.ModifierReclamationActivity"
+            android:exported="true" /> <!-- Déclaration de l'activité ajoutée -->
+
     </application>
 </manifest>

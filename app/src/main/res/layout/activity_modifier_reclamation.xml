@@ -11,7 +11,7 @@
         android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Formulaire de réclamation"
+        android:text="Modifier la réclamation"
         android:textSize="24sp"
         android:textStyle="bold"
         android:gravity="center"
@@ -39,6 +39,7 @@
 
     <!-- Liste des types de réclamation -->
     <TextView
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Types de réclamation"
@@ -92,21 +93,21 @@
         android:minLines="4"
         android:layout_marginTop="8dp"/>
 
-    <!-- Bouton Soumettre -->
+    <!-- Bouton Soumettre pour la modification -->
     <Button
         android:id="@+id/btn_submit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Soumettre"
+        android:text="Modifier"
         android:background="@color/design_default_color_primary"
         android:textColor="@android:color/white"
         android:layout_marginTop="16dp"
         android:padding="12dp"/>
+
     <Button
         android:id="@+id/buttonDeleteDb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Supprimer la Base de Données" />
-
 
 </LinearLayout>
