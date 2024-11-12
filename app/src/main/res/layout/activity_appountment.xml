@@ -1,0 +1,87 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@android:color/background_light">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Book an Appointment"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Description"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/descriptionEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Description"
+        android:padding="12dp"
+        android:background="@android:drawable/edit_text"
+        android:layout_marginBottom="16dp"
+        android:inputType="textMultiLine"
+        android:lines="3"
+        android:maxLines="5" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Date"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/dateEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="YYYY-MM-DD"
+        android:focusable="false"
+        android:padding="12dp"
+        android:background="@android:drawable/edit_text"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Time"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/timeEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="HH:MM"
+        android:focusable="false"
+        android:padding="12dp"
+        android:background="@android:drawable/edit_text"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Urgent"
+        android:layout_marginBottom="8dp" />
+
+    <Switch
+        android:id="@+id/dangerSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:thumbTint="@android:color/holo_red_dark"
+        android:trackTint="@android:color/holo_red_light"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/submitButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:textColor="@android:color/white"
+        android:padding="12dp" />
+</LinearLayout>

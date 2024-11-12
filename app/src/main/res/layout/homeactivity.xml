@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_blue"
+    tools:context=".Activity.Modules.RendezVous.ProfileFragment">
+
+    <!-- Welcome Banner -->
+    <TextView
+        android:id="@+id/welcomeText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Welcome, [User's Name]!"
+        android:textSize="24sp"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:padding="16dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:elevation="4dp"/>
+
+    <!-- Health Overview Section (Heart Rate Card) -->
+    <LinearLayout
+        android:id="@+id/healthOverview"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/welcomeText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center"> <!-- Centered layout -->
+
+        <!-- Heart Rate Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_background"
+            android:padding="16dp"
+            android:gravity="center"
+            android:elevation="4dp"
+            android:layout_marginBottom="16dp"> <!-- Margin for spacing -->
+
+            <ImageView
+                android:id="@+id/ic_heart_rate"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_heart_rate"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Heart Rate"
+                android:textColor="@color/black"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="72 BPM"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <!-- Description about SantéConnect -->
+        <TextView
+            android:id="@+id/appDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="SantéConnect is your go-to app for tracking health metrics and managing your wellness."
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:padding="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/healthOverview"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

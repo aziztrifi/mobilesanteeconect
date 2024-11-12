@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_calendar"
+        android:icon="@drawable/calendar"
+        android:title="Calendar"
+        android:iconTint="?android:attr/colorPrimary"
+        android:titleTextColor="?android:attr/colorPrimary"
+        android:fontFamily="@font/rubik_bold"
+        android:itemBackground="@drawable/button_background" />
+
+    <item
+        android:id="@+id/navigation_dossier"
+        android:icon="@drawable/profil"
+        android:title="Dossier"
+        android:iconTint="?android:attr/colorPrimary"
+        android:titleTextColor="?android:attr/colorPrimary"
+        android:fontFamily="@font/rubik_bold"
+        android:itemBackground="@drawable/button_background" />
+
+    <item
+        android:id="@+id/navigation_profile"
+        android:icon="@drawable/pp"
+        android:title="Profile"
+        android:iconTint="?android:attr/colorPrimary"
+        android:titleTextColor="?android:attr/colorPrimary"
+        android:fontFamily="@font/rubik_bold"
+        android:itemBackground="@drawable/pp" />
+
+    <item
+        android:id="@+id/navigation_blog"
+        android:icon="@drawable/mm"
+        android:title="Blog"
+        android:iconTint="?android:attr/colorPrimary"
+        android:titleTextColor="?android:attr/colorPrimary"
+        android:fontFamily="@font/rubik_bold"
+        android:itemBackground="@drawable/button_background" />
+</menu>
