@@ -11,21 +11,19 @@ import com.example.santeconnect.DAO.CommentDao;
 import com.example.santeconnect.adapter.Converters;
 import com.example.santeconnect.entity.Blog;
 import com.example.santeconnect.entity.Comment;
-
-@Database(entities = {Blog.class, Comment.class}, version = 1, exportSchema = false)
+@Database(entities = {Blog.class, Comment.class}, version = 2, exportSchema = false)
 @TypeConverters(Converters.class)
 public abstract class Appdatabase extends RoomDatabase {
-
     private static Appdatabase instance;
 
     public abstract BlogDao blogDao();
-    public abstract CommentDao commentDao();  // Add the new DAO for comments
+    public abstract CommentDao commentDao();
 
     public static synchronized Appdatabase getInstance(Context context) {
         if (instance == null) {
             instance = Room.databaseBuilder(context.getApplicationContext(),
                             Appdatabase.class, "santeconnect_database")
-                    .fallbackToDestructiveMigration()
+                    .fallbackToDestructiveMigration() // In case of schema changes, drop and recreate the database
                     .build();
         }
         return instance;
