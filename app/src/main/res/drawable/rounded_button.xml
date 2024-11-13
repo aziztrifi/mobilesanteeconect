@@ -1,0 +1,4 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/esante_primary"/> <!-- Change color to match eSanté theme -->
+    <corners android:radius="20dp"/>
+</shape>

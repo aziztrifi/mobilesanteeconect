@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Titre de la page de suivi des réclamations -->
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Suivi de vos réclamations"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Container pour les réclamations dynamiques -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="Liste des réclamations"
+        android:importantForAccessibility="yes">
+
+        <LinearLayout
+            android:id="@+id/reclamation_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="16dp"/>
+    </ScrollView>
+
+    <!-- Bouton pour passer à l'interface de soumission d'une réclamation -->
+    <Button
+        android:id="@+id/btn_passer_reclamation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Passer une Réclamation"
+        android:layout_marginTop="16dp"/>
+
+</LinearLayout>

@@ -1,0 +1,98 @@
+<!-- res/layout/appointment_item.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:elevation="4dp"
+    android:layout_marginBottom="12dp"
+    android:layout_margin="8dp"
+    android:background="?android:attr/selectableItemBackground">
+
+    <!-- Appointment Title (Description) -->
+    <TextView
+        android:id="@+id/appointmentDescriptionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:layout_marginBottom="4dp" />
+
+    <!-- Date and Time -->
+    <TextView
+        android:id="@+id/appointmentDateTimeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textColor="@android:color/darker_gray"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Status and Urgency (Horizontal Layout) -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="12dp">
+
+        <!-- Status -->
+        <TextView
+            android:id="@+id/appointmentStatusTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Status: Pending"
+            android:textSize="14sp"
+            android:textColor="@android:color/black"
+            android:layout_marginEnd="16dp" />
+
+        <!-- Urgency Indicator -->
+        <TextView
+            android:id="@+id/appointmentUrgentTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="@android:color/holo_red_dark"
+            android:text="Urgent" />
+    </LinearLayout>
+
+    <!-- Accept / Reject Buttons (Horizontal Layout) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end">
+
+        <Button
+            android:id="@+id/acceptButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Accept"
+            android:textColor="@android:color/white"
+            android:background="@android:color/holo_green_dark"
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:id="@+id/rejectButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reject"
+            android:background="@android:color/holo_red_dark"
+            android:textColor="@android:color/white" />
+        <Button
+            android:id="@+id/deleteButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delete"
+            android:textColor="@android:color/white"
+            android:background="@android:color/holo_green_dark"
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:id="@+id/updateButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Update"
+            android:background="@android:color/holo_red_dark"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+</LinearLayout>

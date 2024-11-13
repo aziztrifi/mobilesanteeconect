@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Titre de la page -->
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Modifier la réclamation"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:paddingBottom="16dp"/>
+
+    <!-- Champ Nom -->
+    <EditText
+        android:id="@+id/et_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nom"
+        android:inputType="textPersonName"
+        android:padding="12dp"/>
+
+    <!-- Champ Email -->
+    <EditText
+        android:id="@+id/et_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:padding="12dp"
+        android:layout_marginTop="8dp"/>
+
+    <!-- Liste des types de réclamation -->
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Types de réclamation"
+        android:textSize="18sp"
+        android:paddingTop="16dp"/>
+
+    <CheckBox
+        android:id="@+id/cb_doctor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Réclamation contre un docteur"/>
+
+    <CheckBox
+        android:id="@+id/cb_service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Réclamation sur le service médical"/>
+
+    <CheckBox
+        android:id="@+id/cb_appointment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Problème de rendez-vous"/>
+
+    <CheckBox
+        android:id="@+id/cb_other"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Autre"/>
+
+    <!-- Champ de texte pour la description de l'option 'Autre', caché au départ -->
+    <EditText
+        android:id="@+id/et_other_reclamation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Veuillez préciser"
+        android:visibility="gone"
+        android:inputType="text"
+        android:padding="12dp"
+        android:layout_marginTop="8dp"/>
+
+    <!-- Champ Description -->
+    <EditText
+        android:id="@+id/et_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Description"
+        android:inputType="textMultiLine"
+        android:gravity="top"
+        android:padding="12dp"
+        android:minLines="4"
+        android:layout_marginTop="8dp"/>
+
+    <!-- Bouton Soumettre pour la modification -->
+    <Button
+        android:id="@+id/btn_submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Modifier"
+        android:background="@color/design_default_color_primary"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="16dp"
+        android:padding="12dp"/>
+
+    <Button
+        android:id="@+id/buttonDeleteDb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Supprimer la Base de Données" />
+
+</LinearLayout>

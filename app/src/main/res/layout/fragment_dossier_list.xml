@@ -1,0 +1,22 @@
+<!-- res/layout/fragment_dossier_list.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:queryHint="Rechercher par nom" />
+    <Button
+        android:id="@+id/buttonAddDossier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:text="Ajouter un Dossier" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewDossiers"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp"/>
+</LinearLayout>

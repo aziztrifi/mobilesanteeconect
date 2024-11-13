@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Champ pour le nom -->
+    <EditText
+        android:id="@+id/nomEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nom"
+        android:inputType="text"
+        android:text=""/>  <!-- Laissez vide pour l'édition -->
+
+    <!-- Champ pour le prénom -->
+    <EditText
+        android:id="@+id/prenomEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Prénom"
+        android:inputType="text"
+        android:text=""/>  <!-- Laissez vide pour l'édition -->
+
+    <!-- Champ pour le numéro de téléphone -->
+    <EditText
+        android:id="@+id/telephoneEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Numéro de téléphone"
+        android:inputType="phone"
+        android:text=""/>  <!-- Laissez vide pour l'édition -->
+
+    <!-- Champ pour l'adresse -->
+    <EditText
+        android:id="@+id/adresseEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Adresse"
+        android:inputType="text"
+        android:text=""/>  <!-- Laissez vide pour l'édition -->
+
+    <!-- Champ pour l'email -->
+    <EditText
+        android:id="@+id/emailEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:text=""/>  <!-- Laissez vide pour l'édition -->
+
+    <!-- Champ pour afficher la date de naissance -->
+    <TextView
+        android:id="@+id/dateNaissanceTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Date de naissance"
+        android:paddingTop="8dp"/>
+
+    <!-- Bouton pour sélectionner la date -->
+    <Button
+        android:id="@+id/selectDateButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sélectionner la date" />
+
+    <!-- Spinner pour sélectionner le type sanguin -->
+    <Spinner
+        android:id="@+id/typeSanguinSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <!-- ImageView pour afficher l'image du dossier médical -->
+    <ImageView
+        android:id="@+id/dossierImageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"
+        android:contentDescription="Image du dossier"
+        android:src="@android:drawable/ic_menu_camera" />
+
+    <!-- Bouton pour sélectionner une image -->
+    <Button
+        android:id="@+id/selectImageButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sélectionner une image" />
+
+    <!-- Bouton pour enregistrer le dossier médical -->
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enregistrer" />
+
+</LinearLayout>
