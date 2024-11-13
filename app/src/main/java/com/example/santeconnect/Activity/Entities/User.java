@@ -23,6 +23,12 @@ public class User {
         this.password = password;
         //this.profileImageUri = profileImageUri;
     }
+    public User(int id, String name, String email) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        //this.profileImageUri = profileImageUri;
+    }
 
     public int getId() {
         return id;

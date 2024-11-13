@@ -7,14 +7,28 @@ public class RendezVou {
     private String description;
     private String status;  // e.g., "Pending", "Completed"
     private boolean urgent; // true for urgent, false for non-urgent
+    private int idUserPatient; // ID of the patient
+    private int idUserDoctor;  // ID of the doctor
 
-    public RendezVou(int id, String date, String time, String description, String status, boolean urgent) {
+    public RendezVou(int id, String date, String time, String description, String status, boolean urgent, int idUserPatient, int idUserDoctor) {
         this.id = id;
         this.date = date;
         this.time = time;
         this.description = description;
         this.status = status;
         this.urgent = urgent;
+        this.idUserPatient = idUserPatient;
+        this.idUserDoctor = idUserDoctor;
+    }
+    public RendezVou( String date, String time, String description, String status, boolean urgent, int idUserPatient, int idUserDoctor) {
+        this.id = id;
+        this.date = date;
+        this.time = time;
+        this.description = description;
+        this.status = status;
+        this.urgent = urgent;
+        this.idUserPatient = idUserPatient;
+        this.idUserDoctor = idUserDoctor;
     }
 
     public RendezVou() {
@@ -49,6 +63,22 @@ public class RendezVou {
         this.urgent = urgent;
     }
 
+    public int getIdUserPatient() {
+        return idUserPatient;
+    }
+
+    public void setIdUserPatient(int idUserPatient) {
+        this.idUserPatient = idUserPatient;
+    }
+
+    public int getIdUserDoctor() {
+        return idUserDoctor;
+    }
+
+    public void setIdUserDoctor(int idUserDoctor) {
+        this.idUserDoctor = idUserDoctor;
+    }
+
     @Override
     public String toString() {
         return "RendezVou{" +
@@ -58,7 +88,8 @@ public class RendezVou {
                 ", description='" + description + '\'' +
                 ", status='" + status + '\'' +
                 ", urgent=" + urgent +
+                ", idUserPatient=" + idUserPatient +
+                ", idUserDoctor=" + idUserDoctor +
                 '}';
     }
 }
-

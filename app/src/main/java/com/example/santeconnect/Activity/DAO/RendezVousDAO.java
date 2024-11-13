@@ -20,7 +20,7 @@ public class RendezVousDAO {
         database = dbHelper.getWritableDatabase();
     }
 
-
+    // Insert a new rendez-vous
     public void insertRendezVou(RendezVou rendezVou) {
         ContentValues values = new ContentValues();
         values.put(DatabaseHelper.COLUMN_DATE, rendezVou.getDate());
@@ -28,6 +28,8 @@ public class RendezVousDAO {
         values.put(DatabaseHelper.COLUMN_DESCRIPTION, rendezVou.getDescription());
         values.put(DatabaseHelper.COLUMN_STATUS, rendezVou.getStatus());
         values.put(DatabaseHelper.COLUMN_URGENT, rendezVou.isUrgent() ? 1 : 0);  // Store boolean as 1 or 0
+        values.put(DatabaseHelper.COLUMN_USER_PATIENT_ID, rendezVou.getIdUserPatient());  // New field for patient ID
+        values.put(DatabaseHelper.COLUMN_USER_DOCTOR_ID, rendezVou.getIdUserDoctor());    // New field for doctor ID
         database.insert(DatabaseHelper.TABLE_RENDEZ_VOUS, null, values);
     }
 
@@ -39,9 +41,12 @@ public class RendezVousDAO {
         values.put(DatabaseHelper.COLUMN_DESCRIPTION, rendezVou.getDescription());
         values.put(DatabaseHelper.COLUMN_STATUS, rendezVou.getStatus());
         values.put(DatabaseHelper.COLUMN_URGENT, rendezVou.isUrgent() ? 1 : 0);
+        values.put(DatabaseHelper.COLUMN_USER_PATIENT_ID, rendezVou.getIdUserPatient());  // New field for patient ID
+        values.put(DatabaseHelper.COLUMN_USER_DOCTOR_ID, rendezVou.getIdUserDoctor());    // New field for doctor ID
         database.update(DatabaseHelper.TABLE_RENDEZ_VOUS, values,
                 DatabaseHelper.COLUMN_ID + " = ?", new String[]{String.valueOf(rendezVou.getId())});
     }
+
     // Update the status of a rendez-vous to "Accepted"
     public void acceptRendezVou(int id) {
         ContentValues values = new ContentValues();
@@ -57,7 +62,6 @@ public class RendezVousDAO {
         database.update(DatabaseHelper.TABLE_RENDEZ_VOUS, values,
                 DatabaseHelper.COLUMN_ID + " = ?", new String[]{String.valueOf(id)});
     }
-
 
     // Delete a rendez-vous
     public void deleteRendezVou(int id) {
@@ -80,6 +84,8 @@ public class RendezVousDAO {
                 rendezVou.setDescription(cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COLUMN_DESCRIPTION)));
                 rendezVou.setStatus(cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COLUMN_STATUS)));
                 rendezVou.setUrgent(cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseHelper.COLUMN_URGENT)) == 1);
+                rendezVou.setIdUserPatient(cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseHelper.COLUMN_USER_PATIENT_ID)));  // New field for patient ID
+                rendezVou.setIdUserDoctor(cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseHelper.COLUMN_USER_DOCTOR_ID)));    // New field for doctor ID
                 rendezVousList.add(rendezVou);
             } while (cursor.moveToNext());
         }
@@ -102,6 +108,8 @@ public class RendezVousDAO {
             rendezVou.setDescription(cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COLUMN_DESCRIPTION)));
             rendezVou.setStatus(cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COLUMN_STATUS)));
             rendezVou.setUrgent(cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseHelper.COLUMN_URGENT)) == 1);
+            rendezVou.setIdUserPatient(cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseHelper.COLUMN_USER_PATIENT_ID)));  // New field for patient ID
+            rendezVou.setIdUserDoctor(cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseHelper.COLUMN_USER_DOCTOR_ID)));    // New field for doctor ID
             cursor.close();
             return rendezVou;
         } else {

@@ -1,16 +1,13 @@
 package com.example.santeconnect.Activity.Modules.User;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.santeconnect.Activity.DAO.UserDAO;
@@ -19,16 +16,13 @@ import com.example.santeconnect.R;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    private static final int PICK_IMAGE_REQUEST = 1;
     private UserDAO userDAO;
     private EditText editTextName, editTextEmail, editTextPassword, editTextConfirmPassword;
-   // private ImageView imageViewProfilePreview;
-   // private Uri selectedImageUri;
+    private Spinner spinnerRole;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_register);
 
         userDAO = new UserDAO(this);
@@ -38,25 +32,13 @@ public class RegisterActivity extends AppCompatActivity {
         editTextEmail = findViewById(R.id.editTextEmail);
         editTextPassword = findViewById(R.id.editTextPassword);
         editTextConfirmPassword = findViewById(R.id.editTextConfirmPassword);
+        spinnerRole = findViewById(R.id.spinnerRole);
 
-        // Initialize ImageView for profile preview and button for selecting image
-        //imageViewProfilePreview = findViewById(R.id.imageViewProfilePreview);
-       // Button buttonSelectImage = findViewById(R.id.buttonSelectImage);
-
-        // Set click listener for image selection button
-       // buttonSelectImage.setOnClickListener(view -> openImageSelector());
-    }
-
-    private void openImageSelector() {
-        Intent intent = new Intent(Intent.ACTION_PICK);
-        intent.setType("image/*");
-        startActivityForResult(intent, PICK_IMAGE_REQUEST);
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
+        // Set up spinner with roles
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.user_roles, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerRole.setAdapter(adapter);
     }
 
     public void onLoginClick(View view) {
@@ -69,7 +51,7 @@ public class RegisterActivity extends AppCompatActivity {
         String email = editTextEmail.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
         String confirmPassword = editTextConfirmPassword.getText().toString().trim();
-        String role = "user";
+        String role = spinnerRole.getSelectedItem().toString().toLowerCase();  // Get selected role
 
         // Validate input fields
         if (name.isEmpty() || email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
@@ -80,11 +62,6 @@ public class RegisterActivity extends AppCompatActivity {
                 editTextConfirmPassword.setError("Please confirm your password");
             return;
         }
-
-        /*if (selectedImageUri == null) {
-            Toast.makeText(this, "Profile image is required", Toast.LENGTH_SHORT).show();
-            return;
-        }*/
 
         if (!password.equals(confirmPassword)) {
             editTextConfirmPassword.setError("Passwords do not match");
@@ -101,8 +78,7 @@ public class RegisterActivity extends AppCompatActivity {
         newUser.setName(name);
         newUser.setEmail(email);
         newUser.setPassword(password);
-        newUser.setRole(role);
-       // newUser.setProfileImageUri(selectedImageUri.toString());
+        newUser.setRole(role);  // Assign selected role
 
         // Insert data into the database
         boolean isInserted = userDAO.insertUser(newUser);

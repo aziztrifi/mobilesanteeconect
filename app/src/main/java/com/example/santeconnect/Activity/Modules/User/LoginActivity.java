@@ -14,6 +14,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.santeconnect.Activity.DAO.UserDAO;
 import com.example.santeconnect.Activity.Entities.User;
 import com.example.santeconnect.Activity.Modules.Blog.BlogActivity;
+import com.example.santeconnect.Activity.Modules.RendezVous.Calender;
+import com.example.santeconnect.Activity.Modules.RendezVous.Dashboard;
 import com.example.santeconnect.R;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
@@ -72,7 +74,7 @@ public class LoginActivity extends AppCompatActivity {
             // Create session with user's details, including the profile image URI
             sessionManager.createSession(user.getName(), user.getEmail(), user.getRole());
 
-            Intent intent = new Intent(this, BlogActivity.class);
+            Intent intent = new Intent(this, Calender.class);
             startActivity(intent);
             finish();
         } else {

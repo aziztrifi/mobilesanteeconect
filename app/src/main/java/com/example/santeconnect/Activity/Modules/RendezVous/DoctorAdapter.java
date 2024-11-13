@@ -8,20 +8,20 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.santeconnect.Activity.Entities.Doctor;
+import com.example.santeconnect.Activity.Entities.User;
 import com.example.santeconnect.R;
 
 import java.util.List;
 
 public class DoctorAdapter extends RecyclerView.Adapter<DoctorAdapter.DoctorViewHolder> {
-    private final List<Doctor> doctorList;
-    private final Context context;
 
-    public DoctorAdapter(List<Doctor> doctorList, Context context) {
+    private List<User> doctorList;
+    private Context context;
+
+    public DoctorAdapter(List<User> doctorList, Context context) {
         this.doctorList = doctorList;
         this.context = context;
     }
@@ -35,14 +35,16 @@ public class DoctorAdapter extends RecyclerView.Adapter<DoctorAdapter.DoctorView
 
     @Override
     public void onBindViewHolder(@NonNull DoctorViewHolder holder, int position) {
-        Doctor doctor = doctorList.get(position);
-        holder.nameTextView.setText(doctor.getName());
-        holder.specialtyTextView.setText(doctor.getSpecialty());
-        holder.imageView.setImageResource(doctor.getImageResource());
+        User doctor = doctorList.get(position);
+        holder.doctorNameTextView.setText(doctor.getName());
+        holder.doctorSpecialtyTextView.setText("Specialty: Unknown"); // Set specialty if available
+        holder.doctorImageView.setImageResource(R.drawable.pp); // Replace with doctor's image if available
 
-        holder.bookAppointmentButton.setOnClickListener(v -> {
+        // Set click listener for the add appointment button
+        holder.addAppointmentButton.setOnClickListener(v -> {
+            // Start AppountmentActivity and pass the doctor's ID
             Intent intent = new Intent(context, AppountmentActivity.class);
-            intent.putExtra("doctorName", doctor.getName()); // Pass the doctor name if needed
+            intent.putExtra("doctorId", doctor.getId());
             context.startActivity(intent);
         });
     }
@@ -53,17 +55,16 @@ public class DoctorAdapter extends RecyclerView.Adapter<DoctorAdapter.DoctorView
     }
 
     static class DoctorViewHolder extends RecyclerView.ViewHolder {
-        ImageView imageView;
-        TextView nameTextView;
-        TextView specialtyTextView;
-        Button bookAppointmentButton;
+        TextView doctorNameTextView, doctorSpecialtyTextView;
+        ImageView doctorImageView;
+        Button addAppointmentButton;
 
-        public DoctorViewHolder(@NonNull View itemView) {
+        DoctorViewHolder(@NonNull View itemView) {
             super(itemView);
-            imageView = itemView.findViewById(R.id.doctorImageView);
-            nameTextView = itemView.findViewById(R.id.doctorNameTextView);
-            specialtyTextView = itemView.findViewById(R.id.doctorSpecialtyTextView);
-            bookAppointmentButton = itemView.findViewById(R.id.addAppointmentButton);
+            doctorNameTextView = itemView.findViewById(R.id.doctorNameTextView);
+            doctorSpecialtyTextView = itemView.findViewById(R.id.doctorSpecialtyTextView);
+            doctorImageView = itemView.findViewById(R.id.doctorImageView);
+            addAppointmentButton = itemView.findViewById(R.id.addAppointmentButton);
         }
     }
 }

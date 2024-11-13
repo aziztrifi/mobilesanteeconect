@@ -9,6 +9,9 @@
     import com.example.santeconnect.Activity.Database.DatabaseHelper;
     import com.example.santeconnect.Activity.Entities.User;
 
+    import java.util.ArrayList;
+    import java.util.List;
+
     import javax.crypto.Cipher;
     import javax.crypto.spec.SecretKeySpec;
 
@@ -238,6 +241,31 @@
             }
             return userId;
         }
+        public List<User> getDoctors() {
+            SQLiteDatabase db = dbHelper.getReadableDatabase();
+            List<User> doctorList = new ArrayList<>();
+
+            Cursor cursor = db.query(TABLE_NAME,
+                    new String[]{COL_ID, COL_NAME, COL_EMAIL, COL_ROLE},
+                    COL_ROLE + "=?",
+                    new String[]{"doctor"},
+                    null, null, null);
+
+            if (cursor != null && cursor.moveToFirst()) {
+                do {
+                    User user = new User();
+                    user.setId(cursor.getInt(cursor.getColumnIndexOrThrow(COL_ID)));
+                    user.setName(cursor.getString(cursor.getColumnIndexOrThrow(COL_NAME)));
+                    user.setEmail(cursor.getString(cursor.getColumnIndexOrThrow(COL_EMAIL)));
+                    user.setRole(cursor.getString(cursor.getColumnIndexOrThrow(COL_ROLE)));
+                    doctorList.add(user);
+                } while (cursor.moveToNext());
+                cursor.close();
+            }
+
+            return doctorList;
+        }
+
 
 
     }
