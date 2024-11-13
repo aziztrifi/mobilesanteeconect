@@ -38,7 +38,6 @@ public class SessionManager {
         //editor.putString(KEY_PROFILE_IMAGE, profileImageUrl);
         editor.putBoolean(KEY_IF_LOGGED_IN, true);
         editor.commit();
-
     }
 
 
@@ -55,6 +54,8 @@ public class SessionManager {
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK); // Clear activity stack
         context.startActivity(intent);
     }
+
+
 
 
 }

@@ -1,5 +1,7 @@
 package com.example.santeconnect.Activity.Entities;
 
+import java.util.List;
+
 public class User {
     private int id;
     private String name;
@@ -7,7 +9,10 @@ public class User {
     private String password;
     private String role;
     //private String profileImageUri; // New field to store the URI of the profile image
+    private List<Blog> blogs;
 
+    // List of comments made by the user
+    private List<Comment> comments;
     public User() {
     }
 
@@ -58,12 +63,13 @@ public class User {
     public void setRole(String role) {
         this.role = role;
     }
+    public List<Blog> getBlogs() { return blogs; }
 
-   /* public String getProfileImageUri() {
-        return profileImageUri;
+    public void setBlogs(List<Blog> blogs) { this.blogs = blogs; }
+
+    public List<Comment> getComments() { return comments; }
+
+    public void setComments(List<Comment> comments) {
+        this.comments = comments;
     }
-
-    public void setProfileImageUri(String profileImageUri) {
-        this.profileImageUri = profileImageUri;
-    }*/
 }
