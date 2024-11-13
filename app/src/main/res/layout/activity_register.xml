@@ -121,7 +121,21 @@
                             tools:ignore="TouchTargetSizeCheck" />
                     </com.google.android.material.textfield.TextInputLayout>
 
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textInputRole"
+                        style="@style/parent"
+                        android:layout_marginTop="@dimen/loginViewsMargin">
 
+                        <Spinner
+                            android:id="@+id/spinnerRole"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:spinnerMode="dropdown"
+                            android:padding="12dp"
+                            android:gravity="center"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </com.google.android.material.textfield.TextInputLayout>
                     <Button
                         android:id="@+id/cirRegisterButton"
                         style="@style/loginButton"

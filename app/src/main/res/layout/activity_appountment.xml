@@ -83,5 +83,6 @@
         android:layout_height="wrap_content"
         android:text="Submit"
         android:textColor="@android:color/white"
-        android:padding="12dp" />
+        android:backgroundTint="@color/esante_primary"
+    android:padding="12dp" />
 </LinearLayout>

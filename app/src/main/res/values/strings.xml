@@ -8,7 +8,10 @@
     <!--for facebook login-->
 
     <!--facebook login ends-->
-
+    <string-array name="user_roles">
+        <item>Doctor</item>
+        <item>Patient</item>
+    </string-array>
     <!--error messages-->
     <string name="success_login">Login Successful</string>
     <string name="error_message_name">Enter Full Name</string>
